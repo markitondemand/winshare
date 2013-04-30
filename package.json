@@ -1,0 +1,21 @@
+{
+  "name": "winshare",
+  "version": "0.0.1",
+  "description": "Find physical path for windows unc shares.",
+  "main": "winshare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "windows",
+    "unc",
+    "share",
+    "path",
+    "net",
+    "folder"
+  ],
+  "author": "Ben Taber <ben.taber@markit.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
