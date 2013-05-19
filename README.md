@@ -12,7 +12,6 @@ npm install winshare
 
 Case insensitive share lookup.  Nothing fancy here, this is a `net share` cli wrapper.
 
-
 ### Find a share by name
 
 Input a string shareName and function callback.  Returns a share object.
@@ -31,18 +30,10 @@ winshare('c$', function(err, share) {
 });
 ```
 
-### Find all shares
+### todo
 
-Input a function callback.  Returns an array of share objects.
+- Return all shares if no sharename input 
 
-```javascript
-var winshare = require('winshare');
-
-winshare(function(err, shares) {
-  
-});
-
-```
 
 ## License
 

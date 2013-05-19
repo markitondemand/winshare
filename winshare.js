@@ -1,5 +1,6 @@
 var exec = require('child_process').exec,
   os = require('os'),
+  path = require('path'),
   isWindows = (os.platform() == 'win32');
 
 var errs = {}, shares = {};
@@ -18,15 +19,33 @@ function share(name, cb) {
         return false;
       }
 
-      sharePath = l.replace(/^Path\s+/, '');
+      sharePath = path.resolve(l.replace(/^Path\s+/, ''));
       cb(null, sharePath);
       return true;
     });
   });
 }
 
+// too much of a pain due to whitespace and long share names
+// function allShares( cb) `{
+//   exec('net share', function(err, stdout, stderr) {
+//     var lines = stdout.split(os.EOL);
 
-module.exports = function(name, cb) {
+//     if (err) {
+//       return cb(err);
+//     }
+
+//     // trim the fat
+//     lines.splice(0,4);
+//     lines.splice(lines.length-3);
+
+//     lines.forEach(function(l) {
+//       console.log(l.split(/\s{2,}/));
+//     });
+//   });
+// }
+
+function winshare(name, cb) {
   if (!isWindows) {
     return cb(new Error('Only useful on windows.'));
   }
@@ -49,3 +68,14 @@ module.exports = function(name, cb) {
     }
   });
 };
+
+// winshare.all = function(cb) {
+//   allShares(cb);
+// }
+
+winshare.clearCache = function() {
+  errs = {};
+  shares  = {};
+};
+
+module.exports = winshare;
