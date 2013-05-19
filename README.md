@@ -14,7 +14,7 @@ Case insensitive share lookup.  Nothing fancy here, this is a `net share` cli wr
 
 ### Find a share by name
 
-Input a string shareName and function callback.  Returns a share object.
+Input a string shareName and function callback.  Returns a string representing the physical share path.
 
 ```javascript
 var winshare = require('winshare');
@@ -22,11 +22,8 @@ var winshare = require('winshare');
 winshare('c$', function(err, share) {
   console.log(share);
 
-  // { name: 'c$',
-  //   path: 'c:\\',
-  //   comment: 'Default c$ share'
-  // }
-  
+  // ouputs 
+  // 'c:\\' 
 });
 ```
 
