@@ -1,6 +1,6 @@
 {
   "name": "winshare",
-  "version": "0.0.1",
+  "version": "0.0.2-pre",
   "description": "Find physical path for windows unc shares.",
   "author": "Ben Taber <ben.taber@markit.com>",
   "license": "MIT",
