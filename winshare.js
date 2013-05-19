@@ -1,3 +1,5 @@
+'use strict';
+
 var exec = require('child_process').exec,
   os = require('os'),
   path = require('path'),
@@ -67,7 +69,7 @@ function winshare(name, cb) {
       cb(err, sharePath);
     }
   });
-};
+}
 
 // winshare.all = function(cb) {
 //   allShares(cb);
